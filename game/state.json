@@ -3,8 +3,8 @@
     " ",
     " ",
     " ",
-    " ",
-    " ",
+    "X",
+    "O",
     " ",
     " ",
     " ",
@@ -16,5 +16,5 @@
   "draws": 0,
   "board_wins": 0,
   "visitor_wins": 0,
-  "last": ""
+  "last": "Jake4ReaI"
 }
