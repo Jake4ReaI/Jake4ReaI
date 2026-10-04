@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
   <title id="t">Play tic-tac-toe</title>
-  <desc id="d">A small board plays itself. Tic-tac-toe: play it in your browser, three levels, no sign-in. Select this panel to open the game.</desc>
+  <desc id="d">A small board, seen at an angle and turning gently, plays itself. Tic-tac-toe: play it in your browser, three levels, no sign-in. Select this panel to open the game.</desc>
   <style>
     text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
     .run{fill:none;stroke:#ffd9dc;animation:run 12s linear -9s infinite}
@@ -8,18 +8,22 @@
     .run.b{stroke-width:2;stroke-opacity:.95;stroke-dasharray:0 96.5 3.5 0}
     .label{fill:#ffc2c8;font-size:15px;font-weight:600;letter-spacing:6px}
     .acc{fill:#ff5c6c}
-    .tile{fill:#0b0607;fill-opacity:.78;stroke:#fff;stroke-opacity:.14}
-    .m{fill:none;stroke-width:6;stroke-linecap:round;opacity:0}
+    .sway{transform-box:fill-box;transform-origin:center;animation:sway 7s ease-in-out infinite alternate}
+    .side{fill:#070304;stroke:#ff5c6c;stroke-opacity:.28}
+    .plate{fill:#150709;stroke:#ffd9dc;stroke-opacity:.35;stroke-width:1.5}
+    .tile{fill:#0b0607;stroke:#fff;stroke-opacity:.14}
+    .m{fill:none;stroke-width:7;stroke-linecap:round;opacity:0}
     .m1{animation:p1 9s infinite}.m2{animation:p2 9s infinite}.m3{animation:p3 9s infinite}.m4{animation:p4 9s infinite}.m5{animation:p5 9s infinite}
     .x{stroke:#ffe3e6}
     .o{stroke:#ff4558}
-    .strike{fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round;stroke-dasharray:101;stroke-dashoffset:101;animation:strike 9s ease-out infinite}
+    .strike{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round;stroke-dasharray:101;stroke-dashoffset:101;animation:strike 9s ease-out infinite}
     .name{fill:#fbf3f3;font-size:46px;font-weight:700;letter-spacing:-1.5px}
     .say{fill:#e9bcc1;font-size:20px}
     .btn{fill:#ff4558}
     .go{fill:#1a0508;font-size:19px;font-weight:700}
     .pulse{animation:pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
     @keyframes run{to{stroke-dashoffset:-100}}
+    @keyframes sway{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}
     @keyframes p1{0%,4%{opacity:0}7%,82%{opacity:1}88%,100%{opacity:0}}
     @keyframes p2{0%,14%{opacity:0}17%,82%{opacity:1}88%,100%{opacity:0}}
     @keyframes p3{0%,24%{opacity:0}27%,82%{opacity:1}88%,100%{opacity:0}}
@@ -46,6 +50,7 @@
       <stop offset="1" stop-color="#2a1518"/>
     </linearGradient>
     <path id="frame" pathLength="100" d="M16 .75H1184A15.25 15.25 0 0 1 1199.25 16V284A15.25 15.25 0 0 1 1184 299.25H16A15.25 15.25 0 0 1 .75 284V16A15.25 15.25 0 0 1 16 .75Z"/>
+    <rect id="slab" x="-124" y="-124" width="248" height="248" rx="22"/>
   </defs>
 
   <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
@@ -57,25 +62,35 @@
   <text class="label" x="60" y="80">PLAY</text>
   <rect class="acc" x="60" y="96" width="40" height="2"/>
 
-  <!-- a board that plays a short game on a loop: X takes the diagonal -->
-  <g transform="translate(340 42)" aria-hidden="true">
-    <g class="tile">
-      <rect x="0" y="0" width="64" height="64" rx="10"/><rect x="76" y="0" width="64" height="64" rx="10"/><rect x="152" y="0" width="64" height="64" rx="10"/>
-      <rect x="0" y="76" width="64" height="64" rx="10"/><rect x="76" y="76" width="64" height="64" rx="10"/><rect x="152" y="76" width="64" height="64" rx="10"/>
-      <rect x="0" y="152" width="64" height="64" rx="10"/><rect x="76" y="152" width="64" height="64" rx="10"/><rect x="152" y="152" width="64" height="64" rx="10"/>
+  <!-- the board lies flat and is seen from above at an angle; it turns a little each way.
+       Four dark copies stacked underneath give it thickness. X takes the diagonal on a loop. -->
+  <g transform="translate(450 142) scale(1.12 .66)" aria-hidden="true">
+    <g transform="translate(0 32)"><g class="sway"><use href="#slab" class="side"/></g></g>
+    <g transform="translate(0 24)"><g class="sway"><use href="#slab" class="side"/></g></g>
+    <g transform="translate(0 16)"><g class="sway"><use href="#slab" class="side"/></g></g>
+    <g transform="translate(0 8)"><g class="sway"><use href="#slab" class="side"/></g></g>
+    <g class="sway">
+      <use href="#slab" class="plate"/>
+      <g transform="translate(-108 -108)">
+        <g class="tile">
+          <rect x="0" y="0" width="64" height="64" rx="10"/><rect x="76" y="0" width="64" height="64" rx="10"/><rect x="152" y="0" width="64" height="64" rx="10"/>
+          <rect x="0" y="76" width="64" height="64" rx="10"/><rect x="76" y="76" width="64" height="64" rx="10"/><rect x="152" y="76" width="64" height="64" rx="10"/>
+          <rect x="0" y="152" width="64" height="64" rx="10"/><rect x="76" y="152" width="64" height="64" rx="10"/><rect x="152" y="152" width="64" height="64" rx="10"/>
+        </g>
+        <path class="m m1 x" d="M94 94L122 122M122 94L94 122"/>
+        <circle class="m m2 o" cx="184" cy="32" r="15"/>
+        <path class="m m3 x" d="M18 18L46 46M46 18L18 46"/>
+        <circle class="m m4 o" cx="108" cy="32" r="15"/>
+        <path class="m m5 x" d="M170 170L198 198M198 170L170 198"/>
+        <path class="strike" pathLength="100" d="M14 14L202 202"/>
+      </g>
     </g>
-    <path class="m m1 x" d="M94 94L122 122M122 94L94 122"/>
-    <circle class="m m2 o" cx="184" cy="32" r="15"/>
-    <path class="m m3 x" d="M18 18L46 46M46 18L18 46"/>
-    <circle class="m m4 o" cx="108" cy="32" r="15"/>
-    <path class="m m5 x" d="M170 170L198 198M198 170L170 198"/>
-    <path class="strike" pathLength="100" d="M14 14L202 202"/>
   </g>
 
-  <text class="name" x="640" y="122">Tic-tac-toe</text>
-  <text class="say" x="642" y="160">Play it in your browser. Three levels, no sign-in.</text>
+  <text class="name" x="680" y="122">Tic-tac-toe</text>
+  <text class="say" x="682" y="160">Play it in your browser. Three levels, no sign-in.</text>
   <g class="pulse">
-    <rect class="btn" x="642" y="190" width="150" height="46" rx="23"/>
-    <text class="go" x="717" y="219" text-anchor="middle">Play now</text>
+    <rect class="btn" x="682" y="190" width="150" height="46" rx="23"/>
+    <text class="go" x="757" y="219" text-anchor="middle">Play now</text>
   </g>
 </svg>
