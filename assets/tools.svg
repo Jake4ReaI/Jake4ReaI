@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" role="img" aria-labelledby="t d">
+  <title id="t">Tools Jake uses</title>
+  <desc id="d">HTML for what is on the page. CSS for how it looks and moves. JavaScript for what it does. Python for scripts and small tools. Git and GitHub for where the history lives.</desc>
+  <style>
+    svg{--bg:#11376a;--grid:#1a4680;--grid2:#27589a;--ink:#e6f0fb;--soft:#9fbde0;--red:#ff8478}
+    @media(prefers-color-scheme:light){svg{--bg:#eaf1f8;--grid:#d7e3ef;--grid2:#bccfe3;--ink:#11376a;--soft:#4a6a92;--red:#c22f20}}
+    text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+    .bg{fill:var(--bg)}
+    .minor{fill:none;stroke:var(--grid)}
+    .major{fill:none;stroke:var(--grid2);stroke-width:1.5}
+    .frame{stroke:var(--ink);stroke-width:1.5}
+    .head{fill:var(--ink);font-weight:800;font-size:48px;letter-spacing:-1.5px}
+    .rule{fill:none;stroke:var(--red);stroke-width:5;stroke-dasharray:101;animation:draw .8s .3s ease-out backwards}
+    .row{fill:none;stroke:var(--soft);opacity:.55}
+    .n{fill:var(--red);font-weight:700;font-size:20px}
+    .tool{fill:var(--ink);font-weight:700;font-size:24px}
+    .use{fill:var(--soft);font-weight:500;font-size:22px}
+    .block{fill:var(--bg);stroke:var(--ink);stroke-width:1.5}
+    .cap{fill:var(--soft);font-weight:600;font-size:12px;letter-spacing:1.6px}
+    .val{fill:var(--ink);font-weight:600;font-size:18px}
+    @keyframes draw{from{stroke-dashoffset:101}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <defs>
+    <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse"><path class="minor" d="M20 0H0V20"/></pattern>
+    <pattern id="G" width="100" height="100" patternUnits="userSpaceOnUse" patternTransform="translate(20 20)"><rect width="100" height="100" fill="url(#g)"/><path class="major" d="M100 0H0V100"/></pattern>
+  </defs>
+
+  <rect class="bg" width="1200" height="380" rx="8"/>
+  <rect class="frame" x="20" y="20" width="1160" height="340" fill="url(#G)"/>
+
+  <text class="head" x="60" y="106">Tools</text>
+  <path class="rule" pathLength="100" d="M62 128H142"/>
+
+  <text class="cap" x="340" y="66">ITEM</text><text class="cap" x="420" y="66">TOOL</text><text class="cap" x="660" y="66">USED FOR</text>
+  <path class="frame" fill="none" d="M340 80H1140"/>
+  <path class="row" d="M340 124H1140M340 168H1140M340 212H1140M340 256H1140M340 300H1140"/>
+
+  <text class="n" x="340" y="110">1</text><text class="tool" x="420" y="111">HTML</text><text class="use" x="660" y="110">What is on the page</text>
+  <text class="n" x="340" y="154">2</text><text class="tool" x="420" y="155">CSS</text><text class="use" x="660" y="154">How it looks and moves</text>
+  <text class="n" x="340" y="198">3</text><text class="tool" x="420" y="199">JavaScript</text><text class="use" x="660" y="198">What it does</text>
+  <text class="n" x="340" y="242">4</text><text class="tool" x="420" y="243">Python</text><text class="use" x="660" y="242">Scripts and small tools</text>
+  <text class="n" x="340" y="286">5</text><text class="tool" x="420" y="287">Git, GitHub</text><text class="use" x="660" y="286">Where the history lives</text>
+
+  <rect class="block" x="1000" y="320" width="180" height="40"/>
+  <text class="cap" x="1014" y="345">SHEET</text><text class="val" x="1082" y="346">3 of 3</text>
+</svg>
