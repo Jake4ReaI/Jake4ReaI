@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/JakeSajith?tab=repositories"><img src="./assets/header.svg" alt="Jake. AI-focused programmer and project lead. I build things, break them, then rebuild them better." width="100%" /></a>
+  <a href="https://github.com/JakeSajith?tab=repositories"><img src="./assets/header.svg" alt="Jake. AI specialist, programmer and project lead. I build things, break them, then rebuild them better." width="100%" /></a>
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
 
 <br />
 
-<img src="./assets/about.svg" alt="About. I write code and lead the projects it goes into, games included. I oversee development: deadlines met, costs kept low. On games I also set the creative direction. I also work in blockchain engineering. Heading for a master's in AI." width="100%" />
+<img src="./assets/about.svg" alt="About. I write code and lead the projects it goes into, games included. I oversee development: deadlines met, costs kept low. On games I also set the creative direction. I also work in blockchain engineering." width="100%" />
 
 <br />
 
