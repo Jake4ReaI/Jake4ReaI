@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 228" role="img" aria-labelledby="t d">
+  <title id="t">About Jake</title>
+  <desc id="d">I build for the browser first, then the server behind it. I learn by building, breaking, and reading the error. If it works but I can't explain it, it isn't finished.</desc>
+  <style>
+    svg{--bg:#0a0c10;--edge:#262d38;--ink:#f2f4f8;--acc:#f2a93b}
+    text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+    .panel{fill:var(--bg);stroke:var(--edge)}
+    .head{fill:var(--ink);font-weight:700;font-size:40px;letter-spacing:-1px}
+    .acc{fill:var(--acc)}
+    .line{fill:var(--ink);font-size:22px}
+  </style>
+
+  <rect class="panel" x=".5" y=".5" width="1199" height="227" rx="14"/>
+
+  <text class="head" x="60" y="88">About</text>
+  <rect class="acc" x="62" y="108" width="48" height="3" rx="1.5"/>
+
+  <rect class="acc" x="340" y="71" width="16" height="2"/>
+  <text class="line" x="376" y="80">I build for the browser first, then the server behind it.</text>
+  <rect class="acc" x="340" y="115" width="16" height="2"/>
+  <text class="line" x="376" y="124">I learn by building, breaking, and reading the error.</text>
+  <rect class="acc" x="340" y="159" width="16" height="2"/>
+  <text class="line" x="376" y="168">If it works but I can't explain it, it isn't finished.</text>
+</svg>

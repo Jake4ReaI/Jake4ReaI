@@ -10,11 +10,11 @@
 
 <br />
 
-<img src="./assets/notes.svg" alt="Notes. 1: I build for the browser first, then the server behind it. 2: I learn by building, breaking, and reading the error. 3: If it works but I can't explain it, it isn't finished." width="100%" />
+<img src="./assets/about.svg" alt="About. I build for the browser first, then the server behind it. I learn by building, breaking, and reading the error. If it works but I can't explain it, it isn't finished." width="100%" />
 
 <br />
 
-<img src="./assets/tools.svg" alt="Tools. HTML, CSS, JavaScript, Python, Git and GitHub." width="100%" />
+<img src="./assets/tools.svg" alt="Tools. Luau, Java, Python, JavaScript, HTML, CSS, Git, GitHub." width="100%" />
 
 <br />
 
