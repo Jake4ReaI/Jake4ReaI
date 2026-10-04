@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/Jake4ReaI?tab=repositories">Repositories</a>
   &nbsp;&nbsp;•&nbsp;&nbsp;
-  <a href="#tic-tac-toe">Play</a>
+  <a href="https://jake4reai.github.io/Jake4ReaI/">Play</a>
   &nbsp;&nbsp;•&nbsp;&nbsp;
   <a href="#contributions">Contributions</a>
 </p>
@@ -26,31 +26,7 @@
 
 <br />
 
-## Tic-tac-toe
-
-<!-- game:start -->
-<p align="center">You are X. Click an empty cell, then press <b>Submit new issue</b>. The board answers in about a minute.</p>
-
-<table align="center">
-  <tr>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C0&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C1&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C2&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
-  </tr>
-  <tr>
-    <td><img src="./assets/game/x.svg" width="92" alt="X" /></td>
-    <td><img src="./assets/game/o.svg" width="92" alt="O" /></td>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C5&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C6&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C7&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C8&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
-  </tr>
-</table>
-
-<p align="center"><sub>Games: 0 &nbsp;•&nbsp; Draws: 0 &nbsp;•&nbsp; Board wins: 0 &nbsp;•&nbsp; Visitor wins: 0 &nbsp;•&nbsp; Last move: <a href="https://github.com/Jake4ReaI">@Jake4ReaI</a></sub></p>
-<!-- game:end -->
+<a href="https://jake4reai.github.io/Jake4ReaI/"><img src="./assets/play.svg" alt="Play tic-tac-toe in your browser. Three levels, no sign-in." width="100%" /></a>
 
 <br />
 

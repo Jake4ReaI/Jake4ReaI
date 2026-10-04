@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tic-tac-toe | Jake</title>
+<meta name="description" content="Play tic-tac-toe against the board. Three levels, no sign-in.">
+<meta name="theme-color" content="#12070a">
+<style>
+  :root {
+    --ink: #fbf3f3;
+    --soft: #e9bcc1;
+    --red: #ff4558;
+    --pink: #ffe3e6;
+    --tile: rgba(10, 5, 7, .74);
+    --line: rgba(255, 255, 255, .13);
+  }
+  * { box-sizing: border-box; }
+  html { height: 100%; }
+  body {
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    background:
+      radial-gradient(90vmax 70vmax at 8% 108%, rgba(255, 51, 72, .55), transparent 62%),
+      linear-gradient(to top right, #a30f1f 0%, #4a0911 34%, #12070a 66%, #060506 100%) fixed;
+    background-color: #060506;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; border-radius: 6px; }
+
+  header, footer { padding: 22px clamp(18px, 4vw, 40px); }
+  .mark { display: inline-block; line-height: 0; }
+  .mark svg { height: 26px; width: auto; }
+  footer { font-size: 15px; color: var(--soft); }
+
+  main {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 22px;
+    padding: 8px 18px 28px;
+    text-align: center;
+  }
+  h1 { margin: 0; font-size: clamp(34px, 6vw, 54px); font-weight: 700; letter-spacing: -.02em; }
+  #status { margin: 0; min-height: 1.5em; font-size: clamp(17px, 2.4vw, 20px); color: var(--soft); }
+
+  /* the board leans towards the pointer */
+  .stage { perspective: 900px; padding: 14px; position: relative; }
+  .stage::before, .stage::after {
+    content: ""; position: absolute; width: 18px; height: 18px; border: 1.5px solid rgba(255, 127, 138, .8);
+  }
+  .stage::before { left: 0; top: 0; border-right: 0; border-bottom: 0; }
+  .stage::after { right: 0; bottom: 0; border-left: 0; border-top: 0; }
+  .board {
+    --rx: 0deg; --ry: 0deg;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(8px, 2vw, 14px);
+    width: min(84vw, 430px);
+    aspect-ratio: 1;
+    transform: rotateX(var(--rx)) rotateY(var(--ry));
+    transform-style: preserve-3d;
+    transition: transform .18s ease-out;
+  }
+  .cell {
+    appearance: none;
+    margin: 0; padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--tile);
+    color: inherit;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: border-color .15s, box-shadow .15s, transform .12s;
+  }
+  .cell svg { width: 100%; height: 100%; display: block; transform: translateZ(22px); overflow: visible; }
+  .cell path, .cell circle { fill: none; stroke-width: 9; stroke-linecap: round; opacity: 0; }
+  .cell .x { stroke: var(--pink); stroke-dasharray: 57; }
+  .cell .o { stroke: var(--red); stroke-dasharray: 139; }
+
+  .cell:not([data-mark]):hover, .cell:not([data-mark]):focus-visible {
+    border-color: var(--red);
+    box-shadow: 0 0 0 1px var(--red), 0 0 34px rgba(255, 69, 88, .35);
+  }
+  .board:not(.locked) .cell:not([data-mark]):hover .x { opacity: .22; }
+  .cell:not([data-mark]):active { transform: scale(.96); }
+  .cell[data-mark], .board.locked .cell { cursor: default; }
+
+  .cell[data-mark="X"] .x, .cell[data-mark="O"] .o { opacity: 1; animation: draw .32s ease-out both; }
+  .cell[data-mark="X"] .x + .x { animation-delay: .16s; }
+  .cell.won { border-color: var(--pink); box-shadow: 0 0 0 1px var(--pink), 0 0 40px rgba(255, 227, 230, .4); }
+  .board.drawn .cell { opacity: .55; }
+
+  .winline { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; transform: translateZ(34px); }
+  .winline line { stroke: #fff; stroke-width: 7; stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; filter: drop-shadow(0 0 8px rgba(255, 255, 255, .8)); }
+  .winline.show line { opacity: 1; animation: strike .45s .1s ease-out forwards; }
+
+  @keyframes draw { from { stroke-dashoffset: var(--len); } to { stroke-dashoffset: 0; } }
+  @keyframes strike { to { stroke-dashoffset: 0; } }
+
+  .controls { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; }
+  fieldset { margin: 0; padding: 4px; border: 1px solid var(--line); border-radius: 999px; display: flex; background: rgba(10, 5, 7, .55); }
+  legend { position: absolute; left: -9999px; }
+  fieldset label { position: relative; }
+  fieldset input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+  fieldset span { display: block; padding: 9px 16px; border-radius: 999px; font-size: 15px; color: var(--soft); transition: background .15s, color .15s; }
+  fieldset input:checked + span { background: var(--red); color: #1a0508; font-weight: 600; }
+  fieldset input:focus-visible + span { outline: 2px solid var(--pink); outline-offset: 2px; }
+  #again {
+    appearance: none; cursor: pointer;
+    padding: 11px 20px; border-radius: 999px; border: 1px solid var(--red);
+    background: transparent; color: var(--ink); font: inherit; font-size: 15px; font-weight: 600;
+    transition: background .15s, color .15s;
+  }
+  #again:hover { background: var(--red); color: #1a0508; }
+
+  .score { display: flex; gap: clamp(22px, 6vw, 46px); margin: 0; }
+  .score div { display: grid; gap: 2px; }
+  .score dt { font-size: 14px; color: var(--soft); order: 2; }
+  .score dd { margin: 0; font-size: 32px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .hint { margin: 0; font-size: 14px; color: var(--soft); opacity: .8; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .winline.show line { stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <a class="mark" href="https://github.com/Jake4ReaI" aria-label="Jake, back to the GitHub profile">
+    <svg viewBox="46 80 700 200" fill="none" stroke="#fbf3f3" stroke-width="28" aria-hidden="true">
+      <clipPath id="cap"><rect x="0" y="80" width="800" height="200"/></clipPath>
+      <g clip-path="url(#cap)">
+        <path transform="translate(74 0)" d="M110 60V211A55 55 0 0 1 0 211V192"/>
+        <path transform="translate(228 0)" d="M3.5 300L75 80L146.5 300M31 215H119"/>
+        <path transform="translate(410 0)" d="M14 60V300M150 60L14 205M70 145.3L155 300"/>
+        <path transform="translate(602 0)" d="M130 94H14V266H130M14 180H115"/>
+      </g>
+    </svg>
+  </a>
+</header>
+
+<main>
+  <h1>Tic-tac-toe</h1>
+  <p id="status" aria-live="polite">Your move. You are X.</p>
+
+  <div class="stage">
+    <div class="board" id="board" role="group" aria-label="Board, three by three">
+      <svg class="winline" id="winline" viewBox="0 0 300 300" aria-hidden="true"><line pathLength="100"/></svg>
+    </div>
+  </div>
+
+  <div class="controls">
+    <fieldset>
+      <legend>Level</legend>
+      <label><input type="radio" name="level" value="easy"><span>Easy</span></label>
+      <label><input type="radio" name="level" value="hard" checked><span>Hard</span></label>
+      <label><input type="radio" name="level" value="unbeatable"><span>Unbeatable</span></label>
+    </fieldset>
+    <button id="again" type="button">New game</button>
+  </div>
+
+  <dl class="score">
+    <div><dd id="s-you">0</dd><dt>You</dt></div>
+    <div><dd id="s-draw">0</dd><dt>Draws</dt></div>
+    <div><dd id="s-board">0</dd><dt>Board</dt></div>
+  </dl>
+  <p class="hint">Keys 1 to 9 play a square. N starts a new game.</p>
+</main>
+
+<footer><a href="https://github.com/Jake4ReaI">Back to the profile</a></footer>
+
+<script>
+(function () {
+  var WINS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  var SLIP = { easy: 0.7, hard: 0.25, unbeatable: 0 };   // chance the board plays a random square
+  var boardEl = document.getElementById('board');
+  var statusEl = document.getElementById('status');
+  var winline = document.getElementById('winline');
+  var cells = [], board, over, busy, level = 'hard', score = load();
+
+  for (var i = 0; i < 9; i++) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'cell';
+    b.innerHTML = '<svg viewBox="0 0 100 100" aria-hidden="true">' +
+      '<path class="x" style="--len:57" d="M30 30L70 70"/><path class="x" style="--len:57" d="M70 30L30 70"/>' +
+      '<circle class="o" style="--len:139" cx="50" cy="50" r="22" transform="rotate(-90 50 50)"/></svg>';
+    b.addEventListener('click', play.bind(null, i));
+    boardEl.insertBefore(b, winline);
+    cells.push(b);
+  }
+
+  function winner(b) {
+    for (var k = 0; k < WINS.length; k++) {
+      var l = WINS[k];
+      if (b[l[0]] && b[l[0]] === b[l[1]] && b[l[0]] === b[l[2]]) return { who: b[l[0]], line: l };
+    }
+    return b.indexOf('') < 0 ? { who: 'draw', line: [] } : null;
+  }
+
+  // best result the board (O) can force from here: 1 win, 0 draw, -1 loss
+  function value(b, turn) {
+    var w = winner(b);
+    if (w) return w.who === 'O' ? 1 : w.who === 'X' ? -1 : 0;
+    var best = turn === 'O' ? -2 : 2;
+    for (var i = 0; i < 9; i++) {
+      if (b[i]) continue;
+      b[i] = turn;
+      var v = value(b, turn === 'O' ? 'X' : 'O');
+      b[i] = '';
+      best = turn === 'O' ? Math.max(best, v) : Math.min(best, v);
+    }
+    return best;
+  }
+
+  function bestMove(b) {
+    var order = [4, 0, 2, 6, 8, 1, 3, 5, 7], best = -2, pick = -1;
+    for (var k = 0; k < 9; k++) {
+      var i = order[k];
+      if (b[i]) continue;
+      b[i] = 'O';
+      var v = value(b, 'X');
+      b[i] = '';
+      if (v > best) { best = v; pick = i; }
+    }
+    return pick;
+  }
+
+  function boardMove() {
+    var free = [];
+    for (var i = 0; i < 9; i++) if (!board[i]) free.push(i);
+    return Math.random() < SLIP[level] ? free[Math.floor(Math.random() * free.length)] : bestMove(board);
+  }
+
+  function label(i) {
+    return 'Row ' + (Math.floor(i / 3) + 1) + ', column ' + (i % 3 + 1) + ', ' + (board[i] || 'empty');
+  }
+
+  function place(i, who) {
+    board[i] = who;
+    cells[i].dataset.mark = who;
+    cells[i].setAttribute('aria-label', label(i));
+  }
+
+  function finish(w) {
+    over = true;
+    boardEl.classList.add('locked');
+    if (w.who === 'draw') {
+      boardEl.classList.add('drawn');
+      statusEl.textContent = 'Draw. Nobody takes it.';
+      score.draw++;
+    } else {
+      w.line.forEach(function (i) { cells[i].classList.add('won'); });
+      var a = w.line[0], z = w.line[2], ln = winline.firstElementChild;
+      ln.setAttribute('x1', 50 + 100 * (a % 3)); ln.setAttribute('y1', 50 + 100 * Math.floor(a / 3));
+      ln.setAttribute('x2', 50 + 100 * (z % 3)); ln.setAttribute('y2', 50 + 100 * Math.floor(z / 3));
+      winline.classList.add('show');
+      statusEl.textContent = w.who === 'X' ? 'You win.' : 'The board wins.';
+      score[w.who === 'X' ? 'you' : 'board']++;
+    }
+    save();
+    showScore();
+  }
+
+  function play(i) {
+    if (over || busy || board[i]) return;
+    place(i, 'X');
+    var w = winner(board);
+    if (w) return finish(w);
+    busy = true;
+    boardEl.classList.add('locked');
+    statusEl.textContent = 'The board is thinking.';
+    setTimeout(function () {
+      place(boardMove(), 'O');
+      busy = false;
+      var w = winner(board);
+      if (w) return finish(w);
+      boardEl.classList.remove('locked');
+      statusEl.textContent = 'Your move.';
+    }, 420);
+  }
+
+  function reset() {
+    board = ['', '', '', '', '', '', '', '', ''];
+    over = busy = false;
+    boardEl.classList.remove('locked', 'drawn');
+    winline.classList.remove('show');
+    cells.forEach(function (c, i) {
+      delete c.dataset.mark;
+      c.classList.remove('won');
+      c.setAttribute('aria-label', label(i));
+    });
+    statusEl.textContent = 'Your move. You are X.';
+  }
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem('ttt')) || { you: 0, draw: 0, board: 0 }; }
+    catch (e) { return { you: 0, draw: 0, board: 0 }; }
+  }
+  function save() { try { localStorage.setItem('ttt', JSON.stringify(score)); } catch (e) {} }
+  function showScore() {
+    document.getElementById('s-you').textContent = score.you;
+    document.getElementById('s-draw').textContent = score.draw;
+    document.getElementById('s-board').textContent = score.board;
+  }
+
+  document.getElementById('again').addEventListener('click', reset);
+  document.querySelectorAll('input[name=level]').forEach(function (r) {
+    r.addEventListener('change', function () { level = r.value; reset(); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key >= '1' && e.key <= '9') play(+e.key - 1);
+    else if (e.key === 'n' || e.key === 'N') reset();
+  });
+
+  // lean the board towards the pointer, on devices with a mouse and motion allowed
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var stage = boardEl.parentElement;
+    stage.addEventListener('pointermove', function (e) {
+      var r = stage.getBoundingClientRect();
+      boardEl.style.setProperty('--ry', ((e.clientX - r.left) / r.width - 0.5) * 12 + 'deg');
+      boardEl.style.setProperty('--rx', (0.5 - (e.clientY - r.top) / r.height) * 12 + 'deg');
+    });
+    stage.addEventListener('pointerleave', function () {
+      boardEl.style.setProperty('--rx', '0deg');
+      boardEl.style.setProperty('--ry', '0deg');
+    });
+  }
+
+  reset();
+  showScore();
+
+  // open the page with ?selfcheck to prove the unbeatable level never loses
+  if (location.search === '?selfcheck') {
+    var games = 0, lost = 0;
+    (function walk(b) {
+      var w = winner(b);
+      if (w) { games++; if (w.who === 'X') lost++; return; }
+      for (var i = 0; i < 9; i++) {
+        if (b[i]) continue;
+        var c = b.slice();
+        c[i] = 'X';
+        if (!winner(c)) c[bestMove(c)] = 'O';
+        walk(c);
+      }
+    })(['', '', '', '', '', '', '', '', '']);
+    statusEl.textContent = 'selfcheck: ' + games + ' games, ' + lost + ' lost';
+  }
+})();
+</script>
+</body>
+</html>
