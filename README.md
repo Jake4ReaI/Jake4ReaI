@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/header.svg" alt="Jake. I build things, break them, then rebuild them better." width="100%" />
+  <a href="https://github.com/JakeSajith?tab=repositories"><img src="./assets/header.svg" alt="Jake. I build things, break them, then rebuild them better." width="100%" /></a>
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 <br />
 
-<img src="./assets/tools.svg" alt="Tools. Languages: Luau, Java, Python, JavaScript. Web: HTML, CSS. Version control: Git, GitHub." width="100%" />
+<img src="./assets/tools.svg" alt="Tools. Languages: Luau, Java, Python, JavaScript. Web: HTML, CSS, Vue.js, Node.js. Version control: Git, GitHub." width="100%" />
 
 <br />
 
