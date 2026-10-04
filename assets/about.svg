@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 228" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 272" role="img" aria-labelledby="t d">
   <title id="t">About Jake</title>
-  <desc id="d">I build for the browser first, then the server behind it. I learn by building, breaking, and reading the error. If it works but I can't explain it, it isn't finished.</desc>
+  <desc id="d">I write code and lead the projects it goes into, games included. I oversee development: deadlines met, costs kept low. On games I also set the creative direction. Heading for a master's in AI.</desc>
   <style>
     text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
     .run{fill:none;stroke:#ffd9dc;animation:run 12s linear -4s infinite}
@@ -9,7 +9,7 @@
     .label{fill:#ffc2c8;font-size:15px;font-weight:600;letter-spacing:6px}
     .acc{fill:#ff5c6c}
     .tick{fill:#ff5c6c;transform-box:fill-box;transform-origin:left center;animation:tick 6s ease-in-out infinite}
-    .tick:nth-of-type(2){animation-delay:.5s}.tick:nth-of-type(3){animation-delay:1s}
+    .tick:nth-of-type(2){animation-delay:.5s}.tick:nth-of-type(3){animation-delay:1s}.tick:nth-of-type(4){animation-delay:1.5s}
     .line{fill:#fbf3f3;font-size:22px}
     @keyframes run{to{stroke-dashoffset:-100}}
     @keyframes tick{0%,18%,100%{transform:scaleX(1);fill:#ff5c6c}9%{transform:scaleX(1.7);fill:#ffd9dc}}
@@ -31,11 +31,11 @@
       <stop offset=".6" stop-color="#5a1a20" stop-opacity=".7"/>
       <stop offset="1" stop-color="#2a1518"/>
     </linearGradient>
-    <path id="frame" pathLength="100" d="M16 .75H1184A15.25 15.25 0 0 1 1199.25 16V212A15.25 15.25 0 0 1 1184 227.25H16A15.25 15.25 0 0 1 .75 212V16A15.25 15.25 0 0 1 16 .75Z"/>
+    <path id="frame" pathLength="100" d="M16 .75H1184A15.25 15.25 0 0 1 1199.25 16V256A15.25 15.25 0 0 1 1184 271.25H16A15.25 15.25 0 0 1 .75 256V16A15.25 15.25 0 0 1 16 .75Z"/>
   </defs>
 
-  <rect width="1200" height="228" rx="16" fill="url(#bg)"/>
-  <rect width="1200" height="228" rx="16" fill="url(#gw)"/>
+  <rect width="1200" height="272" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="272" rx="16" fill="url(#gw)"/>
   <use href="#frame" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
   <use href="#frame" class="run a"/>
   <use href="#frame" class="run b"/>
@@ -47,8 +47,10 @@
     <rect class="tick" x="340" y="71" width="16" height="2"/>
     <rect class="tick" x="340" y="115" width="16" height="2"/>
     <rect class="tick" x="340" y="159" width="16" height="2"/>
+    <rect class="tick" x="340" y="203" width="16" height="2"/>
   </g>
-  <text class="line" x="376" y="80">I build for the browser first, then the server behind it.</text>
-  <text class="line" x="376" y="124">I learn by building, breaking, and reading the error.</text>
-  <text class="line" x="376" y="168">If it works but I can't explain it, it isn't finished.</text>
+  <text class="line" x="376" y="80">I write code and lead the projects it goes into, games included.</text>
+  <text class="line" x="376" y="124">I oversee development: deadlines met, costs kept low.</text>
+  <text class="line" x="376" y="168">On games I also set the creative direction.</text>
+  <text class="line" x="376" y="212">Heading for a master's in AI.</text>
 </svg>

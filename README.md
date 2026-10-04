@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/JakeSajith?tab=repositories"><img src="./assets/header.svg" alt="Jake. I build things, break them, then rebuild them better." width="100%" /></a>
+  <a href="https://github.com/JakeSajith?tab=repositories"><img src="./assets/header.svg" alt="Jake. AI-focused programmer and project lead. I build things, break them, then rebuild them better." width="100%" /></a>
 </p>
 
 <p align="center">
@@ -10,11 +10,11 @@
 
 <br />
 
-<img src="./assets/about.svg" alt="About. I build for the browser first, then the server behind it. I learn by building, breaking, and reading the error. If it works but I can't explain it, it isn't finished." width="100%" />
+<img src="./assets/about.svg" alt="About. I write code and lead the projects it goes into, games included. I oversee development: deadlines met, costs kept low. On games I also set the creative direction. Heading for a master's in AI." width="100%" />
 
 <br />
 
-<img src="./assets/tools.svg" alt="Tools. Languages: Luau, Java, Python, JavaScript. Web: HTML, CSS, Vue.js, Node.js. Version control: Git, GitHub." width="100%" />
+<img src="./assets/tools.svg" alt="Tools. Languages: Luau, Java, Python, JavaScript. Python and data: Pandas, NumPy, Matplotlib, Scikit-learn, Tkinter. Web: HTML, CSS, Vue.js, Node.js, XML, Postman, XSLT, DTD. Databases: SQL, MySQL, MongoDB. Tooling: Git, GitHub, Visual Studio Code." width="100%" />
 
 <br />
 
