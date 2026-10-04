@@ -10,7 +10,7 @@
 
 <br />
 
-<img src="./assets/about.svg" alt="About. I write code and lead the projects it goes into, games included. I oversee development: deadlines met, costs kept low. On games I also set the creative direction. Heading for a master's in AI." width="100%" />
+<img src="./assets/about.svg" alt="About. I write code and lead the projects it goes into, games included. I oversee development: deadlines met, costs kept low. On games I also set the creative direction. I also work in blockchain engineering. Heading for a master's in AI." width="100%" />
 
 <br />
 
