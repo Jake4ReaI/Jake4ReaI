@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/header.svg" alt="Jake. I build things for the web and learn by taking them apart." width="100%" />
+  <img src="./assets/header.svg" alt="Jake. I build things, break them, then rebuild them better." width="100%" />
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 <br />
 
-<img src="./assets/tools.svg" alt="Tools. Luau, Java, Python, JavaScript, HTML, CSS, Git, GitHub." width="100%" />
+<img src="./assets/tools.svg" alt="Tools. Languages: Luau, Java, Python, JavaScript. Web: HTML, CSS. Version control: Git, GitHub." width="100%" />
 
 <br />
 
