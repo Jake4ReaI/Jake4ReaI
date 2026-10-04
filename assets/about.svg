@@ -2,18 +2,35 @@
   <title id="t">About Jake</title>
   <desc id="d">I build for the browser first, then the server behind it. I learn by building, breaking, and reading the error. If it works but I can't explain it, it isn't finished.</desc>
   <style>
-    svg{--bg:#0a0c10;--edge:#262d38;--ink:#f2f4f8;--acc:#f2a93b}
     text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
-    .panel{fill:var(--bg);stroke:var(--edge)}
-    .head{fill:var(--ink);font-weight:700;font-size:40px;letter-spacing:-1px}
-    .acc{fill:var(--acc)}
-    .line{fill:var(--ink);font-size:22px}
+    .label{fill:#ffc2c8;font-size:15px;font-weight:600;letter-spacing:6px}
+    .acc{fill:#ff5c6c}
+    .line{fill:#fbf3f3;font-size:22px}
   </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#a30f1f"/>
+      <stop offset=".34" stop-color="#4a0911"/>
+      <stop offset=".66" stop-color="#12070a"/>
+      <stop offset="1" stop-color="#060506"/>
+    </linearGradient>
+    <radialGradient id="gw" cx=".12" cy="1.05" r=".75">
+      <stop offset="0" stop-color="#ff3348" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ff3348" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge">
+      <stop offset="0" stop-color="#ff5564" stop-opacity=".85"/>
+      <stop offset=".6" stop-color="#5a1a20" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#2a1518"/>
+    </linearGradient>
+  </defs>
 
-  <rect class="panel" x=".5" y=".5" width="1199" height="227" rx="14"/>
+  <rect width="1200" height="228" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="228" rx="16" fill="url(#gw)"/>
+  <rect x=".75" y=".75" width="1198.5" height="226.5" rx="15.25" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
 
-  <text class="head" x="60" y="88">About</text>
-  <rect class="acc" x="62" y="108" width="48" height="3" rx="1.5"/>
+  <text class="label" x="60" y="80">ABOUT</text>
+  <rect class="acc" x="60" y="96" width="40" height="2"/>
 
   <rect class="acc" x="340" y="71" width="16" height="2"/>
   <text class="line" x="376" y="80">I build for the browser first, then the server behind it.</text>

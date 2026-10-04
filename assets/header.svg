@@ -1,26 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="t d">
   <title id="t">Jake</title>
-  <desc id="d">The name Jake in large custom letters between two hairlines. I build things for the web and learn by taking them apart. github.com/JakeSajith</desc>
+  <desc id="d">The name Jake in large custom letters over a red to black gradient. I build things for the web and learn by taking them apart. github.com/JakeSajith</desc>
   <style>
-    svg{--bg:#0a0c10;--edge:#262d38;--hair:#2f3744;--ink:#f2f4f8;--soft:#9aa3b5}
     text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
-    .panel{fill:var(--bg);stroke:var(--edge)}
-    .hair{fill:none;stroke:var(--hair);stroke-dasharray:101;animation:draw 1s ease-out backwards}
-    .ink path{fill:none;stroke:var(--ink);stroke-width:28;stroke-dasharray:101;animation:draw 1.1s cubic-bezier(.65,0,.25,1) backwards}
+    .glow{animation:breathe 7s ease-in-out infinite alternate}
+    .mark{fill:none;stroke:#ff7f8a;stroke-opacity:.75;stroke-width:1.5}
+    .hair{fill:none;stroke:#fff;stroke-opacity:.16;stroke-dasharray:101;animation:draw 1s ease-out backwards}
+    .ink path{fill:none;stroke:url(#ink);stroke-width:28;stroke-dasharray:101;animation:draw 1.1s cubic-bezier(.65,0,.25,1) backwards}
     .ink path:nth-child(1){animation-delay:.3s}.ink path:nth-child(2){animation-delay:.55s}.ink path:nth-child(3){animation-delay:.8s}.ink path:nth-child(4){animation-delay:1.05s}
-    .glint{animation:glide 14s ease-in-out infinite alternate}
-    .say{fill:var(--ink);font-size:22px}
-    .at{fill:var(--soft);font-size:16px}
+    .glint{animation:glide 12s ease-in-out infinite alternate}
+    .say{fill:#fbf3f3;font-size:22px}
+    .at{fill:#cdb6b9;font-size:15px;letter-spacing:1.5px}
     @keyframes draw{from{stroke-dashoffset:101}}
     @keyframes glide{to{transform:translateX(920px)}}
+    @keyframes breathe{from{opacity:.5}to{opacity:1}}
     @media(prefers-reduced-motion:reduce){*{animation:none!important}}
   </style>
   <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#a30f1f"/>
+      <stop offset=".34" stop-color="#4a0911"/>
+      <stop offset=".66" stop-color="#12070a"/>
+      <stop offset="1" stop-color="#060506"/>
+    </linearGradient>
+    <radialGradient id="gw" cx=".12" cy="1.05" r=".75">
+      <stop offset="0" stop-color="#ff3348" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#ff3348" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge">
+      <stop offset="0" stop-color="#ff5564" stop-opacity=".85"/>
+      <stop offset=".6" stop-color="#5a1a20" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#2a1518"/>
+    </linearGradient>
+    <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="0" y1="80" x2="0" y2="280">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffc7cc"/>
+    </linearGradient>
+    <linearGradient id="gl">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
     <clipPath id="cap"><rect x="0" y="80" width="1200" height="200"/></clipPath>
-    <linearGradient id="gl"><stop offset="0" stop-color="#f2a93b" stop-opacity="0"/><stop offset=".5" stop-color="#f2a93b"/><stop offset="1" stop-color="#f2a93b" stop-opacity="0"/></linearGradient>
   </defs>
 
-  <rect class="panel" x=".5" y=".5" width="1199" height="359" rx="14"/>
+  <rect width="1200" height="360" rx="16" fill="url(#bg)"/>
+  <rect class="glow" width="1200" height="360" rx="16" fill="url(#gw)"/>
+  <rect x=".75" y=".75" width="1198.5" height="358.5" rx="15.25" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+
+  <!-- corner marks -->
+  <path class="mark" d="M36 54V36H54M1146 36H1164V54M36 306V324H54M1146 324H1164V306"/>
 
   <!-- cap height and baseline -->
   <path class="hair" pathLength="100" d="M60 80H1140"/>

@@ -2,28 +2,46 @@
   <title id="t">Tools Jake uses</title>
   <desc id="d">Luau, Java, Python, JavaScript, HTML, CSS, Git, GitHub.</desc>
   <style>
-    svg{--bg:#0a0c10;--edge:#262d38;--hair:#2f3744;--ink:#f2f4f8;--acc:#f2a93b}
     text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
-    .panel{fill:var(--bg);stroke:var(--edge)}
-    .head{fill:var(--ink);font-weight:700;font-size:40px;letter-spacing:-1px}
-    .acc{fill:var(--acc)}
-    .hair{fill:none;stroke:var(--hair)}
-    .tool{fill:var(--ink);font-weight:600;font-size:30px;letter-spacing:-.5px}
+    .label{fill:#ffc2c8;font-size:15px;font-weight:600;letter-spacing:6px}
+    .acc{fill:#ff5c6c}
+    .hair{fill:none;stroke:#fff;stroke-opacity:.14}
+    .dot{fill:#ff4558}
+    .tool{fill:#fbf3f3;font-weight:600;font-size:28px;letter-spacing:-.4px}
   </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#a30f1f"/>
+      <stop offset=".34" stop-color="#4a0911"/>
+      <stop offset=".66" stop-color="#12070a"/>
+      <stop offset="1" stop-color="#060506"/>
+    </linearGradient>
+    <radialGradient id="gw" cx=".12" cy="1.05" r=".75">
+      <stop offset="0" stop-color="#ff3348" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ff3348" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge">
+      <stop offset="0" stop-color="#ff5564" stop-opacity=".85"/>
+      <stop offset=".6" stop-color="#5a1a20" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#2a1518"/>
+    </linearGradient>
+  </defs>
 
-  <rect class="panel" x=".5" y=".5" width="1199" height="299" rx="14"/>
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="300" rx="16" fill="url(#gw)"/>
+  <rect x=".75" y=".75" width="1198.5" height="298.5" rx="15.25" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
 
-  <text class="head" x="60" y="88">Tools</text>
-  <rect class="acc" x="62" y="108" width="48" height="3" rx="1.5"/>
+  <text class="label" x="60" y="80">TOOLS</text>
+  <rect class="acc" x="60" y="96" width="40" height="2"/>
 
   <path class="hair" d="M340 60H1140M340 150H1140M340 240H1140M540 60V240M740 60V240M940 60V240"/>
 
-  <text class="tool" x="340" y="116">Luau</text>
-  <text class="tool" x="564" y="116">Java</text>
-  <text class="tool" x="764" y="116">Python</text>
-  <text class="tool" x="964" y="116">JavaScript</text>
-  <text class="tool" x="340" y="206">HTML</text>
-  <text class="tool" x="564" y="206">CSS</text>
-  <text class="tool" x="764" y="206">Git</text>
-  <text class="tool" x="964" y="206">GitHub</text>
+  <rect class="dot" x="340" y="101" width="8" height="8" rx="2"/><text class="tool" x="360" y="115">Luau</text>
+  <rect class="dot" x="560" y="101" width="8" height="8" rx="2"/><text class="tool" x="580" y="115">Java</text>
+  <rect class="dot" x="760" y="101" width="8" height="8" rx="2"/><text class="tool" x="780" y="115">Python</text>
+  <rect class="dot" x="960" y="101" width="8" height="8" rx="2"/><text class="tool" x="980" y="115">JavaScript</text>
+  <rect class="dot" x="340" y="191" width="8" height="8" rx="2"/><text class="tool" x="360" y="205">HTML</text>
+  <rect class="dot" x="560" y="191" width="8" height="8" rx="2"/><text class="tool" x="580" y="205">CSS</text>
+  <rect class="dot" x="760" y="191" width="8" height="8" rx="2"/><text class="tool" x="780" y="205">Git</text>
+  <rect class="dot" x="960" y="191" width="8" height="8" rx="2"/><text class="tool" x="980" y="205">GitHub</text>
 </svg>
