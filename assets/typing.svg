@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" role="img" aria-labelledby="t d">
+  <title id="t">A line that types itself</title>
+  <desc id="d">Jack of ALL trades. If you stopped seeing the world in terms of what you like and what you dislike, and saw things for what they truly are in themselves, you would find a great deal more peace in your life.</desc>
+  <style>
+    text{font-family:ui-monospace,"Cascadia Mono",Consolas,Menlo,"SF Mono",monospace;font-size:22px;fill:#fbf3f3}
+    .run{fill:none;stroke:#ffd9dc;animation:run 12s linear -6s infinite}
+    .run.a{stroke-width:1.5;stroke-opacity:.45;stroke-dasharray:0 88 12 0}
+    .run.b{stroke-width:2;stroke-opacity:.95;stroke-dasharray:0 96.5 3.5 0}
+    .bar{fill:#0b0708;stroke:#fff;stroke-opacity:.08}
+    .prompt{fill:none;stroke:#ff4558;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .cover{fill:#0b0708}
+    .cur{fill:#ff4558;animation:blink 1s steps(1) infinite}
+    .ln{opacity:0}
+    .l1{opacity:1}
+    @keyframes show1{0%{opacity:1}18.014%{opacity:0}100%{opacity:0}}
+    @keyframes type1{0%{transform:translateX(0);animation-timing-function:steps(19,end)}4.492%,100%{transform:translateX(235.6px)}}
+    .l1{animation:show1 19.23s step-end infinite}.c1{animation:type1 19.23s linear infinite}
+    @keyframes show2{0%{opacity:0}19.835%{opacity:1}45.792%{opacity:0}100%{opacity:0}}
+    @keyframes type2{0%,19.835%{transform:translateX(0);animation-timing-function:steps(79,end)}38.511%,100%{transform:translateX(979.6px)}}
+    .l2{animation:show2 19.23s step-end infinite}.c2{animation:type2 19.23s linear infinite}
+    @keyframes show3{0%{opacity:0}47.612%{opacity:1}67.423%{opacity:0}100%{opacity:0}}
+    @keyframes type3{0%,47.612%{transform:translateX(0);animation-timing-function:steps(53,end)}60.142%,100%{transform:translateX(657.2px)}}
+    .l3{animation:show3 19.23s step-end infinite}.c3{animation:type3 19.23s linear infinite}
+    @keyframes show4{0%{opacity:0}69.243%{opacity:1}98.18%{opacity:0}100%{opacity:0}}
+    @keyframes type4{0%,69.243%{transform:translateX(0);animation-timing-function:steps(52,end)}81.537%,100%{transform:translateX(644.8px)}}
+    .l4{animation:show4 19.23s step-end infinite}.c4{animation:type4 19.23s linear infinite}
+    @keyframes blink{50%{opacity:0}}
+    @keyframes run{to{stroke-dashoffset:-100}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}.cover,.cur{display:none}}
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#a30f1f"/>
+      <stop offset=".34" stop-color="#4a0911"/>
+      <stop offset=".66" stop-color="#12070a"/>
+      <stop offset="1" stop-color="#060506"/>
+    </linearGradient>
+    <linearGradient id="edge">
+      <stop offset="0" stop-color="#ff5564" stop-opacity=".85"/>
+      <stop offset=".6" stop-color="#5a1a20" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#2a1518"/>
+    </linearGradient>
+    <path id="frame" pathLength="100" d="M16 .75H1184A15.25 15.25 0 0 1 1199.25 16V104A15.25 15.25 0 0 1 1184 119.25H16A15.25 15.25 0 0 1 .75 104V16A15.25 15.25 0 0 1 16 .75Z"/>
+    <clipPath id="in"><rect x="41" y="29" width="1118" height="62" rx="9"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="120" rx="16" fill="url(#bg)"/>
+  <use href="#frame" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+  <use href="#frame" class="run a"/>
+  <use href="#frame" class="run b"/>
+
+  <rect class="bar" x="40" y="28" width="1120" height="64" rx="10"/>
+  <path class="prompt" d="M62 50L74 60L62 70"/>
+
+  <!-- each phrase sits under a cover that steps aside one character at a time -->
+  <g clip-path="url(#in)">
+    <g class="ln l1"><text x="92" y="68" textLength="235.6" lengthAdjust="spacing">Jack of ALL trades.</text><g class="c1"><rect class="cover" x="92" y="32" width="1068" height="56"/><rect class="cur" x="95" y="47" width="11" height="26" rx="2"/></g></g>
+    <g class="ln l2"><text x="92" y="68" textLength="979.6" lengthAdjust="spacing">If you stopped seeing the world in terms of what you like and what you dislike,</text><g class="c2"><rect class="cover" x="92" y="32" width="1068" height="56"/><rect class="cur" x="95" y="47" width="11" height="26" rx="2"/></g></g>
+    <g class="ln l3"><text x="92" y="68" textLength="657.2" lengthAdjust="spacing">and saw things for what they truly are in themselves,</text><g class="c3"><rect class="cover" x="92" y="32" width="1068" height="56"/><rect class="cur" x="95" y="47" width="11" height="26" rx="2"/></g></g>
+    <g class="ln l4"><text x="92" y="68" textLength="644.8" lengthAdjust="spacing">you would find a great deal more peace in your life.</text><g class="c4"><rect class="cover" x="92" y="32" width="1068" height="56"/><rect class="cur" x="95" y="47" width="11" height="26" rx="2"/></g></g>
+  </g>
+</svg>

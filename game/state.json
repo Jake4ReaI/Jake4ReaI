@@ -1,0 +1,20 @@
+{
+  "board": [
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " "
+  ],
+  "over": false,
+  "result": "",
+  "played": 0,
+  "draws": 0,
+  "board_wins": 0,
+  "visitor_wins": 0,
+  "last": ""
+}
