@@ -33,13 +33,13 @@
 
 <table align="center">
   <tr>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C0&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
+    <td><img src="./assets/game/o.svg" width="92" alt="O" /></td>
     <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C1&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
     <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C2&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C3&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
-    <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C4&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
+    <td><img src="./assets/game/x.svg" width="92" alt="X" /></td>
     <td><a href="https://github.com/Jake4ReaI/Jake4ReaI/issues/new?title=ttt%7Cmove%7C5&body=Press+Submit+new+issue+to+play+this+move."><img src="./assets/game/empty.svg" width="92" alt="empty cell, play here" /></a></td>
   </tr>
   <tr>
@@ -49,7 +49,7 @@
   </tr>
 </table>
 
-<p align="center"><sub>Games: 0 &nbsp;•&nbsp; Draws: 0 &nbsp;•&nbsp; Board wins: 0 &nbsp;•&nbsp; Visitor wins: 0</sub></p>
+<p align="center"><sub>Games: 0 &nbsp;•&nbsp; Draws: 0 &nbsp;•&nbsp; Board wins: 0 &nbsp;•&nbsp; Visitor wins: 0 &nbsp;•&nbsp; Last move: <a href="https://github.com/Jake4ReaI">@Jake4ReaI</a></sub></p>
 <!-- game:end -->
 
 <br />
