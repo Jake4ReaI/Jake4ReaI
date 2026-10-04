@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/JakeSajith?tab=repositories"><img src="./assets/header.svg" alt="Jake. AI specialist, programmer and project lead. I build things, break them, then rebuild them better." width="100%" /></a>
+  <a href="https://github.com/JakeSajith?tab=repositories"><img src="./assets/header.svg" alt="Jake. AI specialist and programmer. I build things, break them, then rebuild them better." width="100%" /></a>
 </p>
 
 <p align="center">
@@ -10,7 +10,11 @@
 
 <br />
 
-<img src="./assets/about.svg" alt="About. I write code and lead the projects it goes into, games included. I oversee development: deadlines met, costs kept low. On games I also set the creative direction. I also work in blockchain engineering." width="100%" />
+<img src="./assets/about.svg" alt="About. Approach: I split a problem into testable parts. Hardest part first. Debugging: I find the cause before I change a line. Thinking: I question the first answer, mine included. Builds: I build software and games in Luau, Java, Python, JavaScript. Studied: I've studied blockchain engineering. Led: I've led game projects: scope, deadlines, creative direction." width="100%" />
+
+<br />
+
+<img src="./assets/stats.svg" alt="Stats. 3+ years developing. Started developing on 21 Sep 2023. 4 languages. 19 tools and frameworks." width="100%" />
 
 <br />
 

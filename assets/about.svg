@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 272" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 398" role="img" aria-labelledby="t d">
   <title id="t">About Jake</title>
-  <desc id="d">I write code and lead the projects it goes into, games included. I oversee development: deadlines met, costs kept low. On games I also set the creative direction. I also work in blockchain engineering.</desc>
+  <desc id="d">Approach: I split a problem into testable parts. Hardest part first. Debugging: I find the cause before I change a line. Thinking: I question the first answer, mine included. Builds: I build software and games in Luau, Java, Python, JavaScript. Studied: I've studied blockchain engineering. Led: I've led game projects: scope, deadlines, creative direction. Beside the list, a small decision flow diagram with a pulse running round its loop.</desc>
   <style>
     text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
     .run{fill:none;stroke:#ffd9dc;animation:run 12s linear -4s infinite}
@@ -8,11 +8,16 @@
     .run.b{stroke-width:2;stroke-opacity:.95;stroke-dasharray:0 96.5 3.5 0}
     .label{fill:#ffc2c8;font-size:15px;font-weight:600;letter-spacing:6px}
     .acc{fill:#ff5c6c}
-    .tick{fill:#ff5c6c;transform-box:fill-box;transform-origin:left center;animation:tick 6s ease-in-out infinite}
-    .tick:nth-of-type(2){animation-delay:.5s}.tick:nth-of-type(3){animation-delay:1s}.tick:nth-of-type(4){animation-delay:1.5s}
-    .line{fill:#fbf3f3;font-size:22px}
+    .hair{fill:none;stroke:#fff;stroke-opacity:.14}
+    .cat{fill:#e9bcc1;font-size:15px;font-weight:500}
+    .line{fill:#fbf3f3;font-size:20px}
+    .flow *{stroke:#ffe3e6;stroke-opacity:.85;stroke-width:1.2;stroke-linejoin:round}
+    .wire{fill:none}
+    .node{fill:#1a0508;fill-opacity:.7}
+    .flow .yes{stroke:#ff4558;stroke-opacity:1;stroke-width:1.6}
+    .flow .pulse{fill:none;stroke:#fff;stroke-opacity:1;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:0 86 14 0;animation:run 5s linear infinite}
+    .flow .pulse.two{stroke:#ff4558;stroke-dasharray:0 60 40 0;animation-duration:5s;animation-delay:-2.2s}
     @keyframes run{to{stroke-dashoffset:-100}}
-    @keyframes tick{0%,18%,100%{transform:scaleX(1);fill:#ff5c6c}9%{transform:scaleX(1.7);fill:#ffd9dc}}
     @media(prefers-reduced-motion:reduce){*{animation:none!important}}
   </style>
   <defs>
@@ -31,11 +36,11 @@
       <stop offset=".6" stop-color="#5a1a20" stop-opacity=".7"/>
       <stop offset="1" stop-color="#2a1518"/>
     </linearGradient>
-    <path id="frame" pathLength="100" d="M16 .75H1184A15.25 15.25 0 0 1 1199.25 16V256A15.25 15.25 0 0 1 1184 271.25H16A15.25 15.25 0 0 1 .75 256V16A15.25 15.25 0 0 1 16 .75Z"/>
+    <path id="frame" pathLength="100" d="M16 .75H1184A15.25 15.25 0 0 1 1199.25 16V382A15.25 15.25 0 0 1 1184 397.25H16A15.25 15.25 0 0 1 .75 382V16A15.25 15.25 0 0 1 16 .75Z"/>
   </defs>
 
-  <rect width="1200" height="272" rx="16" fill="url(#bg)"/>
-  <rect width="1200" height="272" rx="16" fill="url(#gw)"/>
+  <rect width="1200" height="398" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="398" rx="16" fill="url(#gw)"/>
   <use href="#frame" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
   <use href="#frame" class="run a"/>
   <use href="#frame" class="run b"/>
@@ -43,14 +48,23 @@
   <text class="label" x="60" y="80">ABOUT</text>
   <rect class="acc" x="60" y="96" width="40" height="2"/>
 
-  <g>
-    <rect class="tick" x="340" y="71" width="16" height="2"/>
-    <rect class="tick" x="340" y="115" width="16" height="2"/>
-    <rect class="tick" x="340" y="159" width="16" height="2"/>
-    <rect class="tick" x="340" y="203" width="16" height="2"/>
+  <!-- decision flow: start, test, pass to the right, fail loops back round -->
+  <g class="flow" transform="translate(64 156) scale(1.15)" aria-hidden="true">
+    <path class="wire" d="M17 40H58M102 40H150M80 62V104M52 118H10V47"/>
+    <circle class="node" cx="10" cy="40" r="7"/>
+    <path class="node" d="M58 40L80 18L102 40L80 62Z"/>
+    <rect class="node yes" x="150" y="26" width="56" height="28" rx="4"/>
+    <rect class="node" x="52" y="104" width="56" height="28" rx="4"/>
+    <path class="pulse" pathLength="100" d="M10 40H80V118H10V40"/>
+    <path class="pulse two" pathLength="100" d="M80 40H178"/>
   </g>
-  <text class="line" x="376" y="80">I write code and lead the projects it goes into, games included.</text>
-  <text class="line" x="376" y="124">I oversee development: deadlines met, costs kept low.</text>
-  <text class="line" x="376" y="168">On games I also set the creative direction.</text>
-  <text class="line" x="376" y="212">I also work in blockchain engineering.</text>
+
+  <path class="hair" d="M340 56H1140M340 102H1140M340 148H1140M340 194H1140M340 240H1140M340 286H1140M340 332H1140"/>
+
+  <text class="cat" x="340" y="84">Approach</text><text class="line" x="500" y="86">I split a problem into testable parts. Hardest part first.</text>
+  <text class="cat" x="340" y="130">Debugging</text><text class="line" x="500" y="132">I find the cause before I change a line.</text>
+  <text class="cat" x="340" y="176">Thinking</text><text class="line" x="500" y="178">I question the first answer, mine included.</text>
+  <text class="cat" x="340" y="222">Builds</text><text class="line" x="500" y="224">I build software and games in Luau, Java, Python, JavaScript.</text>
+  <text class="cat" x="340" y="268">Studied</text><text class="line" x="500" y="270">I've studied blockchain engineering.</text>
+  <text class="cat" x="340" y="314">Led</text><text class="line" x="500" y="316">I've led game projects: scope, deadlines, creative direction.</text>
 </svg>

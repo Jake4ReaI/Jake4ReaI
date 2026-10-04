@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" role="img" aria-labelledby="t d">
+  <title id="t">Jake's stats</title>
+  <desc id="d">3+ years developing. Started developing on 21 Sep 2023. 4 languages. 19 tools and frameworks.</desc>
+  <style>
+    text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+    .run{fill:none;stroke:#ffd9dc;animation:run 12s linear -1.5s infinite}
+    .run.a{stroke-width:1.5;stroke-opacity:.45;stroke-dasharray:0 88 12 0}
+    .run.b{stroke-width:2;stroke-opacity:.95;stroke-dasharray:0 96.5 3.5 0}
+    .label{fill:#ffc2c8;font-size:15px;font-weight:600;letter-spacing:6px}
+    .acc{fill:#ff5c6c}
+    .hair{fill:none;stroke:#fff;stroke-opacity:.14}
+    .num{fill:#fbf3f3;font-size:44px;font-weight:700;letter-spacing:-1px}
+    .cap{fill:#e9bcc1;font-size:15px;font-weight:500}
+    @keyframes run{to{stroke-dashoffset:-100}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#a30f1f"/>
+      <stop offset=".34" stop-color="#4a0911"/>
+      <stop offset=".66" stop-color="#12070a"/>
+      <stop offset="1" stop-color="#060506"/>
+    </linearGradient>
+    <radialGradient id="gw" cx=".12" cy="1.05" r=".75">
+      <stop offset="0" stop-color="#ff3348" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ff3348" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge">
+      <stop offset="0" stop-color="#ff5564" stop-opacity=".85"/>
+      <stop offset=".6" stop-color="#5a1a20" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#2a1518"/>
+    </linearGradient>
+    <path id="frame" pathLength="100" d="M16 .75H1184A15.25 15.25 0 0 1 1199.25 16V204A15.25 15.25 0 0 1 1184 219.25H16A15.25 15.25 0 0 1 .75 204V16A15.25 15.25 0 0 1 16 .75Z"/>
+  </defs>
+
+  <rect width="1200" height="220" rx="16" fill="url(#bg)"/>
+  <rect width="1200" height="220" rx="16" fill="url(#gw)"/>
+  <use href="#frame" fill="none" stroke="url(#edge)" stroke-width="1.5"/>
+  <use href="#frame" class="run a"/>
+  <use href="#frame" class="run b"/>
+
+  <text class="label" x="60" y="80">STATS</text>
+  <rect class="acc" x="60" y="96" width="40" height="2"/>
+
+  <path class="hair" d="M340 56H1140M340 164H1140M480 74V146M780 74V146M940 74V146"/>
+
+  <text class="num" x="340" y="116">3+</text><text class="cap" x="340" y="144">years developing</text>
+  <text class="num" x="500" y="116">21 Sep 2023</text><text class="cap" x="500" y="144">started developing</text>
+  <text class="num" x="800" y="116">4</text><text class="cap" x="800" y="144">languages</text>
+  <text class="num" x="960" y="116">19</text><text class="cap" x="960" y="144">tools and frameworks</text>
+</svg>

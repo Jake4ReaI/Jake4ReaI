@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="t d">
   <title id="t">Jake</title>
-  <desc id="d">A slowly turning wireframe globe with a satellite circling it, beside the name Jake in large custom letters, over a red to black gradient. AI specialist, programmer and project lead. I build things, break them, then rebuild them better. github.com/JakeSajith</desc>
+  <desc id="d">A slowly turning wireframe globe with a satellite circling it, beside the name Jake in large custom letters, over a red to black gradient. AI specialist and programmer. I build things, break them, then rebuild them better. github.com/JakeSajith</desc>
   <style>
     text{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
     .run{fill:none;stroke:#ffd9dc;animation:run 12s linear infinite}
@@ -105,7 +105,7 @@
     <rect class="glint" x="60" y="280" width="160" height="3" fill="url(#gl)"/>
   </g>
 
-  <text class="role" x="602" y="266">AI SPECIALIST / PROGRAMMER / PROJECT LEAD</text>
+  <text class="role" x="602" y="266">AI SPECIALIST / PROGRAMMER</text>
   <text class="say" x="602" y="308">I build things, break them,<tspan x="602" dy="33">then rebuild them better.</tspan></text>
   <text class="at" x="602" y="378">github.com/JakeSajith</text>
 </svg>
